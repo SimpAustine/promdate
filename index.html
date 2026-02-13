@@ -6,7 +6,7 @@
 <title>Will You Be My Prom Date? 💌</title>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 <style>
-/* General */
+/* General Styles */
 body {
     margin:0;
     font-family: 'Quicksand', sans-serif;
@@ -14,7 +14,7 @@ body {
     background: #fff0f5;
 }
 
-/* Floating Hearts Animation */
+/* Floating Hearts */
 .heart {
     position: absolute;
     color: #ff4d6d;
@@ -22,7 +22,6 @@ body {
     animation: float 6s linear infinite;
     opacity: 0.8;
 }
-
 @keyframes float {
     0% {transform: translateY(0) translateX(0);}
     50% {transform: translateY(-150px) translateX(20px);}
@@ -48,7 +47,6 @@ body {
     box-shadow:0 10px 30px rgba(0,0,0,0.3);
     animation: pop 1s ease;
 }
-
 @keyframes pop {
     0% {transform: scale(0);}
     100% {transform: scale(1);}
@@ -74,22 +72,18 @@ body {
     text-align:center;
     background: #ffe6eb;
 }
-
 .section h2 {
     font-family: 'Pacifico', cursive;
     font-size:32px;
     margin-bottom:30px;
     color:#ff4d6d;
 }
-
-/* Letters */
 .letters {
     display:flex;
     flex-direction:column;
     gap:20px;
     align-items:center;
 }
-
 .letter {
     width:90%;
     max-width:350px;
@@ -100,12 +94,10 @@ body {
     cursor:pointer;
     transition: transform 0.3s, box-shadow 0.3s;
 }
-
 .letter:hover {
     transform: translateY(-5px);
     box-shadow:0 15px 25px rgba(0,0,0,0.2);
 }
-
 .letter-content {
     display:none;
     margin-top:15px;
@@ -121,7 +113,6 @@ body {
     text-align:center;
     background: #ffebf0;
 }
-
 .proposal h2 {
     font-family: 'Pacifico', cursive;
     font-size:36px;
@@ -129,6 +120,15 @@ body {
     color:#ff4d6d;
 }
 
+/* Google Form Embed */
+iframe {
+    border:none;
+    border-radius:15px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.15);
+    max-width:100%;
+}
+
+/* Buttons (not needed now but kept for reference if you use yes/no buttons later) */
 button {
     padding:15px 40px;
     margin:10px;
@@ -144,7 +144,6 @@ button:hover {transform: scale(1.1);}
 .no {background:#555; color:white;}
 </style>
 </head>
-
 <body>
 
 <!-- Floating Hearts -->
@@ -187,17 +186,19 @@ button:hover {transform: scale(1.1);}
     </div>
 </div>
 
-<!-- PROM PROPOSAL -->
+<!-- PROM PROPOSAL / GOOGLE FORM EMBED -->
 <div class="proposal">
     <h2>Will You Be My Prom Date? 🌹</h2>
-    <h2>by auztine <3 :)</h2>
-<form name="prom-response" method="POST" data-netlify="true">
-  <input type="hidden" name="form-name" value="prom-response">
+    <h2>auztine :) <3</h2>
 
-  <button type="submit" name="answer" value="YES ❤️" class="yes">YES ❤️</button>
-  <button type="submit" name="answer" value="NO 😢" class="no">NO 😢</button>
-</form>
-
+    <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSehjiNnDjEgWD0MPUQN0LX8RyGhyG6kwMgEhgXbKMO_iRmyIA/viewform?embedded=true" 
+        width="100%" 
+        height="600"
+        marginheight="0" 
+        marginwidth="0">
+        Loading…
+    </iframe>
 </div>
 
 <script>
