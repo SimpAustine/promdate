@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will You Be My Prom Date? 💌</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* General */
+body {
+    margin:0;
+    font-family: 'Quicksand', sans-serif;
+    overflow-x:hidden;
+    background: #fff0f5;
+}
+
+/* Floating Hearts Animation */
+.heart {
+    position: absolute;
+    color: #ff4d6d;
+    font-size: 20px;
+    animation: float 6s linear infinite;
+    opacity: 0.8;
+}
+
+@keyframes float {
+    0% {transform: translateY(0) translateX(0);}
+    50% {transform: translateY(-150px) translateX(20px);}
+    100% {transform: translateY(-300px) translateX(-20px);}
+}
+
+/* HERO SECTION */
+.hero {
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+    color:white;
+}
+
+.hero img {
+    width:80%;
+    max-width:300px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+    animation: pop 1s ease;
+}
+
+@keyframes pop {
+    0% {transform: scale(0);}
+    100% {transform: scale(1);}
+}
+
+.continue-btn {
+    margin-top:20px;
+    padding:15px 35px;
+    background:white;
+    color:#ff4d6d;
+    border:none;
+    border-radius:30px;
+    font-size:18px;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+.continue-btn:hover {transform: scale(1.1);}
+
+/* LETTERS SECTION */
+.section {
+    padding:50px 20px;
+    text-align:center;
+    background: #ffe6eb;
+}
+
+.section h2 {
+    font-family: 'Pacifico', cursive;
+    font-size:32px;
+    margin-bottom:30px;
+    color:#ff4d6d;
+}
+
+/* Letters */
+.letters {
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    align-items:center;
+}
+
+.letter {
+    width:90%;
+    max-width:350px;
+    background:#fff;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.15);
+    cursor:pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.letter:hover {
+    transform: translateY(-5px);
+    box-shadow:0 15px 25px rgba(0,0,0,0.2);
+}
+
+.letter-content {
+    display:none;
+    margin-top:15px;
+    font-size:16px;
+    color:#555;
+    line-height:1.5;
+    text-align:left;
+}
+
+/* PROM PROPOSAL */
+.proposal {
+    padding:60px 20px;
+    text-align:center;
+    background: #ffebf0;
+}
+
+.proposal h2 {
+    font-family: 'Pacifico', cursive;
+    font-size:36px;
+    margin-bottom:30px;
+    color:#ff4d6d;
+}
+
+button {
+    padding:15px 40px;
+    margin:10px;
+    border:none;
+    border-radius:30px;
+    font-size:18px;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+button:hover {transform: scale(1.1);}
+.yes {background:#ff4d6d; color:white;}
+.no {background:#555; color:white;}
+</style>
+</head>
+
+<body>
+
+<!-- Floating Hearts -->
+<div class="heart" style="left:10%; animation-delay:0s;">❤️</div>
+<div class="heart" style="left:30%; animation-delay:1s;">💖</div>
+<div class="heart" style="left:50%; animation-delay:2s;">💕</div>
+<div class="heart" style="left:70%; animation-delay:3s;">❤️</div>
+<div class="heart" style="left:90%; animation-delay:4s;">💓</div>
+
+<!-- HERO -->
+<div class="hero">
+    <img src="your-image.jpg" alt="Romantic Image">
+    <button class="continue-btn" onclick="scrollToLetters()">
+        Press me to continue 💌
+    </button>
+</div>
+
+<!-- LETTERS SECTION -->
+<div class="section" id="letters">
+    <h2>Open My Letters 💌</h2>
+    <div class="letters">
+        <div class="letter" onclick="openLetter(1)">
+            Letter 1
+            <div id="content1" class="letter-content">
+                From the first moment we met, I knew there was something special about you. Every smile, every word you say makes my heart beat faster. 💖
+            </div>
+        </div>
+        <div class="letter" onclick="openLetter(2)">
+            Letter 2
+            <div id="content2" class="letter-content">
+                You make ordinary days feel magical. Your laughter is the song I want to hear forever, and your presence lights up every corner of my world. 🌸✨
+            </div>
+        </div>
+        <div class="letter" onclick="openLetter(3)">
+            Letter 3
+            <div id="content3" class="letter-content">
+                I can’t keep this to myself any longer… I’ve been dreaming of asking you this moment. Will you make me the happiest by going to prom with me? 💍💕
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PROM PROPOSAL -->
+<div class="proposal">
+    <h2>Will You Be My Prom Date? 🌹</h2>
+    <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
+        <input type="hidden" name="_subject" value="Prom Proposal Response!">
+        <button type="submit" name="answer" value="YES ❤️" class="yes">YES ❤️</button>
+        <button type="submit" name="answer" value="NO 😢" class="no">NO 😢</button>
+    </form>
+</div>
+
+<script>
+function scrollToLetters() {
+    document.getElementById("letters").scrollIntoView({ behavior: "smooth" });
+}
+
+function openLetter(num) {
+    const content = document.getElementById("content"+num);
+    content.style.display = (content.style.display === "block") ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
